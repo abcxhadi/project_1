@@ -117,7 +117,7 @@ const ShafeerPortfolio = () => {
   const experienceItems = [
     { title: 'Years of Experience', value: '10+', icon: <Award className="w-8 h-8 text-gold-500" /> },
     { title: 'Clients Served', value: '5000+', icon: <Users className="w-8 h-8 text-gold-500" /> },
-    { title: 'Kilometers Driven', value: '500,000+', icon: <Car className="w-8 h-8 text-gold-500" /> },
+    { title: 'Kilometers Driven', value: '500k+', icon: <Car className="w-8 h-8 text-gold-500" /> },
     { title: 'VIP Clients', value: '250+', icon: <Star className="w-8 h-8 text-gold-500" /> }
   ];
 
