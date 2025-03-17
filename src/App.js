@@ -478,18 +478,63 @@ const ShafeerPortfolio = () => {
       </section>
 
       {/* BOOKING SECTION */}
-      <section id="booking" className="py-16 px-8">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-4">Book My Services</h2>
-          <div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
+      {/* BOOKING SECTION */}
+<section id="booking" className="py-16 px-4 sm:px-8 bg-gray-50">
+  <div className="container mx-auto max-w-4xl">
+    <h2 className="text-3xl font-bold text-center mb-4">Book My Services</h2>
+    <div className="w-20 h-1 bg-yellow-500 mx-auto mb-8"></div>
+    <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+      Fill out the form below to request a booking. I'll get back to you promptly to confirm your reservation.
+    </p>
+    
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+      <div className="md:flex">
+        {/* Left side - Form description */}
+        <div className="bg-green-800 text-white p-6 md:p-8 md:w-1/3">
+          <h3 className="text-xl font-semibold mb-4">Booking Details</h3>
+          <p className="text-green-100 mb-6">
+            Please provide your travel details and preferences so I can serve you better.
+          </p>
           
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              
-              {/* Service Selection */}
-              <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3 relative">
-                <Briefcase className="w-6 h-6 mr-3 text-gray-500" />
+          <div className="space-y-4 mt-8">
+            <div className="flex items-center space-x-3">
+              <CheckCircle className="w-5 h-5 text-yellow-400" />
+              <span className="text-sm">Instant confirmation</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <CheckCircle className="w-5 h-5 text-yellow-400" />
+              <span className="text-sm">24/7 customer support</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <CheckCircle className="w-5 h-5 text-yellow-400" />
+              <span className="text-sm">Flexible cancellation</span>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-green-700">
+            <h4 className="font-medium mb-2">Need urgent assistance?</h4>
+            <a 
+              href="tel:+971501781981" 
+              className="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300 mb-3"
+            >
+              <Phone className="w-5 h-5" />
+              <span>+971 50 178 1981</span>
+            </a>
+          </div>
+        </div>
+        
+        {/* Right side - Form */}
+        <div className="p-6 md:p-8 md:w-2/3">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Service Selection */}
+            <div>
+              <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+                Service Type
+              </label>
+              <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 relative">
+                <Briefcase className="w-5 h-5 mr-3 text-gray-400" />
                 <select
+                  id="service"
                   name="service"
                   value={bookingDetails.service}
                   onChange={handleInputChange}
@@ -503,53 +548,80 @@ const ShafeerPortfolio = () => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
               </div>
-              
+            </div>
+            
+            {/* Date and Time in one row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Date Field */}
-              <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                <Calendar className="w-6 h-6 mr-3 text-gray-500" />
-                <input 
-                  type="date" 
-                  name="bookingDate"
-                  value={bookingDetails.bookingDate}
-                  onChange={handleInputChange}
-                  className="bg-transparent w-full focus:outline-none"
-                  required
-                />
+              <div>
+                <label htmlFor="bookingDate" className="block text-sm font-medium text-gray-700 mb-1">
+                  Date
+                </label>
+                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                  <Calendar className="w-5 h-5 mr-3 text-gray-400" />
+                  <input 
+                    id="bookingDate"
+                    type="date" 
+                    name="bookingDate"
+                    value={bookingDetails.bookingDate}
+                    onChange={handleInputChange}
+                    className="bg-transparent w-full focus:outline-none"
+                    required
+                  />
+                </div>
               </div>
 
-              {/* Native TIME FIELD */}
-              <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                <Clock className="w-6 h-6 mr-3 text-gray-500" />
-                <input 
-                  type="time" 
-                  name="bookingTime"
-                  value={bookingDetails.bookingTime}
-                  onChange={handleInputChange}
-                  className="bg-transparent w-full focus:outline-none"
-                  required
-                />
+              {/* Time Field */}
+              <div>
+                <label htmlFor="bookingTime" className="block text-sm font-medium text-gray-700 mb-1">
+                  Time
+                </label>
+                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                  <Clock className="w-5 h-5 mr-3 text-gray-400" />
+                  <input 
+                    id="bookingTime"
+                    type="time" 
+                    name="bookingTime"
+                    value={bookingDetails.bookingTime}
+                    onChange={handleInputChange}
+                    className="bg-transparent w-full focus:outline-none"
+                    required
+                  />
+                </div>
               </div>
+            </div>
 
-              {/* Client Name */}
-              <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                <Users className="w-6 h-6 mr-3 text-gray-500" />
+            {/* Client Name */}
+            <div>
+              <label htmlFor="clientName" className="block text-sm font-medium text-gray-700 mb-1">
+                Your Name
+              </label>
+              <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                <Users className="w-5 h-5 mr-3 text-gray-400" />
                 <input 
+                  id="clientName"
                   type="text" 
                   name="clientName"
-                  placeholder="Your Name" 
+                  placeholder="Your Full Name" 
                   value={bookingDetails.clientName}
                   onChange={handleInputChange}
-                  className="bg-transparent w-full focus:outline-none"
+                  className="bg-transparent w-full focus:outline-none placeholder:text-gray-400"
                   required
                 />
               </div>
+            </div>
 
-              {/* Car Type Selection */}
-              <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3 relative">
-                <Car className="w-6 h-6 mr-3 text-gray-500" />
+            {/* Car Type Selection */}
+            <div>
+              <label htmlFor="carType" className="block text-sm font-medium text-gray-700 mb-1">
+                Preferred Car
+              </label>
+              <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 relative">
+                <Car className="w-5 h-5 mr-3 text-gray-400" />
                 <select
+                  id="carType"
                   name="carType"
                   value={bookingDetails.carType}
                   onChange={handleInputChange}
@@ -563,107 +635,134 @@ const ShafeerPortfolio = () => {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none" />
+                <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
               </div>
-              
-              {/* Pickup Location */}
-              <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                <MapPin className="w-6 h-6 mr-3 text-gray-500" />
+            </div>
+            
+            {/* Pickup Location */}
+            <div>
+              <label htmlFor="pickupLocation" className="block text-sm font-medium text-gray-700 mb-1">
+                Pickup Location
+              </label>
+              <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                <MapPin className="w-5 h-5 mr-3 text-gray-400" />
                 <input 
+                  id="pickupLocation"
                   type="text" 
                   name="pickupLocation"
-                  placeholder="Pickup Location" 
+                  placeholder="Enter pickup address" 
                   value={bookingDetails.pickupLocation}
                   onChange={handleInputChange}
-                  className="bg-transparent w-full focus:outline-none"
+                  className="bg-transparent w-full focus:outline-none placeholder:text-gray-400"
                   required
                 />
               </div>
-              
-              {/* Drop-off Location (only if Transfer) */}
-              {isTransferService && (
-                <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                  <Navigation className="w-6 h-6 mr-3 text-gray-500" />
+            </div>
+            
+            {/* Drop-off Location (only if Transfer) */}
+            {isTransferService && (
+              <div>
+                <label htmlFor="dropoffLocation" className="block text-sm font-medium text-gray-700 mb-1">
+                  Drop-off Location
+                </label>
+                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                  <Navigation className="w-5 h-5 mr-3 text-gray-400" />
                   <input 
+                    id="dropoffLocation"
                     type="text" 
                     name="dropoffLocation"
-                    placeholder="Drop-off Location" 
+                    placeholder="Enter destination address" 
                     value={bookingDetails.dropoffLocation}
                     onChange={handleInputChange}
-                    className="bg-transparent w-full focus:outline-none"
+                    className="bg-transparent w-full focus:outline-none placeholder:text-gray-400"
                     required={isTransferService}
                   />
                 </div>
-              )}
+              </div>
+            )}
 
-              {/* Phone & Email Fields */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                  <Phone className="w-6 h-6 mr-3 text-gray-500" />
+            {/* Phone & Email Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                  Phone Number
+                </label>
+                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                  <Phone className="w-5 h-5 mr-3 text-gray-400" />
                   <input 
+                    id="phoneNumber"
                     type="tel" 
                     name="phoneNumber"
-                    placeholder="Your Phone Number" 
+                    placeholder="Your contact number" 
                     value={bookingDetails.phoneNumber}
                     onChange={handleInputChange}
-                    className="bg-transparent w-full focus:outline-none"
+                    className="bg-transparent w-full focus:outline-none placeholder:text-gray-400"
                     required
                   />
                 </div>
-                
-                <div className="flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                  <Mail className="w-6 h-6 mr-3 text-gray-500" />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Email Address
+                </label>
+                <div className="flex items-center bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5">
+                  <Mail className="w-5 h-5 mr-3 text-gray-400" />
                   <input 
+                    id="email"
                     type="email" 
                     name="email"
-                    placeholder="Your Email" 
+                    placeholder="Your email address" 
                     value={bookingDetails.email}
                     onChange={handleInputChange}
-                    className="bg-transparent w-full focus:outline-none"
+                    className="bg-transparent w-full focus:outline-none placeholder:text-gray-400"
                     required
                   />
                 </div>
               </div>
+            </div>
 
-              {/* Email Status Message */}
-              {emailStatus.message && (
-                <div 
-                  className={`p-4 rounded-lg text-center duration-300 ${
-                    emailStatus.error ? 'bg-red-100 text-red-700' 
-                    : emailStatus.sent ? 'bg-green-100 text-green-700' 
-                    : 'bg-blue-100 text-blue-700'
-                  }`}
-                >
-                  {emailStatus.message}
-                </div>
-              )}
-
-              {/* Buttons */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <button 
-                  type="button"
-                  onClick={handleWhatsAppContact}
-                  className="w-full py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center justify-center transition-colors shadow-md font-medium text-lg"
-                >
-                  <MessageCircle className="w-6 h-6 mr-2" />
-                  Book via WhatsApp
-                </button>
-                <button 
-                  type="submit"
-                  disabled={emailStatus.sending}
-                  className={`w-full py-4 rounded-lg transition-colors font-medium ${
-                    emailStatus.sending 
-                      ? 'bg-gray-300 text-gray-600' 
-                      : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-                  }`}
-                >
-                  {emailStatus.sending ? 'Sending...' : 'No Whatsapp...?'}
-                </button>
+            {/* Email Status Message */}
+            {emailStatus.message && (
+              <div 
+                className={`p-4 rounded-lg text-center transition-all duration-300 ${
+                  emailStatus.error ? 'bg-red-50 text-red-700 border border-red-200' 
+                  : emailStatus.sent ? 'bg-green-50 text-green-700 border border-green-200' 
+                  : 'bg-blue-50 text-blue-700 border border-blue-200'
+                }`}
+              >
+                {emailStatus.message}
               </div>
-            </form>
-          </div>
+            )}
+
+            {/* Buttons */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+              <button 
+                type="button"
+                onClick={handleWhatsAppContact}
+                className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center justify-center transition-colors shadow-md font-medium text-lg"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Book via WhatsApp
+              </button>
+              <button 
+                type="submit"
+                disabled={emailStatus.sending}
+                className={`w-full py-3 rounded-lg transition-colors font-medium ${
+                  emailStatus.sending 
+                    ? 'bg-gray-300 text-gray-600 cursor-not-allowed' 
+                    : 'bg-yellow-500 text-gray-800 hover:bg-yellow-400'
+                }`}
+              >
+                {emailStatus.sending ? 'Sending...' : 'Submit Booking'}
+              </button>
+            </div>
+          </form>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* CONTACT SECTION */}
       <section id="contact" className="py-16 px-8 bg-gray-900 text-white">
