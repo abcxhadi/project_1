@@ -509,8 +509,35 @@ const ShafeerPortfolioModern = () => {
       </section>
 
       {/* FOOTER - Minimalist, elegant design */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-3 mb-6 md:mb-0">
+            <Car className="w-6 h-6 text-indigo-300" />
+              <div>
+                <h1 className="text-lg font-bold leading-none">Shafeer Thazhe Veetil</h1>
+                <p className="text-xs text-indigo-300">Premium Chauffeur Service</p>
+              </div>
+            </div>
+            <div className="text-sm text-gray-400">
+              &copy; {new Date().getFullYear()} Shafeer Thazhe Veetil. All rights reserved.
+            </div>
+            <div className="flex space-x-4 mt-6 md:mt-0">
+              <a href="tel:+971501781981" className="hover:text-indigo-300 transition-colors">
+                <Phone className="w-5 h-5" />
+              </a>
+              <a href="https://wa.me/+971501781981" className="hover:text-indigo-300 transition-colors">
+                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a href="mailto:shafeer.driver@gmail.com" className="hover:text-indigo-300 transition-colors">
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
 
-export default ShafeerPortfolioStatic;
+export default ShafeerPortfolioModern;
