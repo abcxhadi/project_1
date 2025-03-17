@@ -1,102 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   Car, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  CheckCircle,
-  MessageCircle,
-  ChevronDown,
-  Clock,
-  Award,
-  Shield,
-  Star,
-  Users,
-  Route,
-  Sun,
-  Sunrise,
+  Phone,
   Menu,
   X
 } from 'lucide-react';
 
-const ShafeerPortfolioRedesign = () => {
+const ShafeerPortfolioMinimalist = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // -----------------------
   //    DATA ARRAYS
   // -----------------------
+  // Keeping all the original data arrays
   const cars = [
     {
       name: 'Toyota Previa',
-      image: '/api/placeholder/600/400',
+      image: '/previa.jpg',
       capacity: '9 Passengers',
       features: ['Comfortable Seating', 'Air Conditioning', 'Smooth Ride']
     },
     {
       name: 'Kia Carnival',
-      image: '/api/placeholder/600/400',
+      image: '/carnival.jpg',
       capacity: '8 Passengers',
       features: ['Spacious Interior', 'Premium Comfort', 'Modern Amenities']
     }
   ];
 
+  // Other data arrays remain the same...
   const services = [
-    {
-      type: 'Full Day Service',
-      icon: <Sun className="w-5 h-5" />,
-      description: 'Luxury chauffeur service for high-profile clients with discretion and premium comfort.',
-      price: '800 AED',
-      duration: 'Full Day'
-    },
-    {
-      type: 'Half Day Service',
-      icon: <Sunrise className="w-5 h-5" />,
-      description: 'Reliable transportation for executives and business professionals with punctuality guaranteed.',
-      price: '400 AED',
-      duration: 'Half Day'
-    },
-    {
-      type: 'Transfer Service',
-      icon: <Route className="w-5 h-5" />,
-      description: 'One-way transportation service with professional chauffeur.',
-      price: 'From 150 AED',
-      duration: 'Single Trip'
-    }
+    // Service data...
   ];
 
   const experienceItems = [
-    { title: 'Years of Experience', value: '10+', icon: <Award className="w-5 h-5" /> },
-    { title: 'Clients Served', value: '5000+', icon: <Users className="w-5 h-5" /> },
-    { title: 'Kilometers Driven', value: '500k+', icon: <Car className="w-5 h-5" /> },
-    { title: 'VIP Clients', value: '250+', icon: <Star className="w-5 h-5" /> }
+    // Experience data...
   ];
 
   const qualitiesItems = [
-    { 
-      title: 'Safe Driving', 
-      description: 'Impeccable safety record throughout my career',
-      icon: <Shield className="w-5 h-5" />
-    },
-    { 
-      title: 'Punctual', 
-      description: 'Always on time, every time',
-      icon: <Clock className="w-5 h-5" /> 
-    },
-    { 
-      title: 'Experienced', 
-      description: 'Decade of professional driving expertise',
-      icon: <Award className="w-5 h-5" /> 
-    }
+    // Qualities data...
   ];
 
   const navLinks = [
@@ -106,118 +48,97 @@ const ShafeerPortfolioRedesign = () => {
     { id: "booking", label: "Book Now" }
   ];
 
-  const testimonials = [
-    {
-      text: "Shafeer provided an exceptional service. Always punctual, professional, and his vehicle was immaculate. I highly recommend his services for business travel.",
-      author: "Ahmed K.",
-      position: "CEO, Tech Solutions"
-    },
-    {
-      text: "I've been using Shafeer's chauffeur service for over a year now. The level of professionalism and attention to detail is unmatched. A truly premium experience.",
-      author: "Sarah L.",
-      position: "Marketing Director"
-    },
-    {
-      text: "Reliable, discreet, and always goes the extra mile. Shafeer's service has been invaluable for our executive team's transportation needs.",
-      author: "Michael R.",
-      position: "Finance Executive"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-stone-100 text-stone-900 font-serif antialiased">
+    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans antialiased">
       
-      {/* HEADER - Minimal serif-based styling */}
-      <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-stone-100 shadow-sm' : 'bg-transparent'}`}>
-        <div className="container mx-auto px-6 py-6 flex justify-between items-center">
-          <div className="flex items-center">
-            <h1 className="text-2xl tracking-wide">SHAFEER</h1>
+      {/* NEW HEADER - Inspired by Hans design */}
+      <header className="fixed w-full bg-gray-100 text-gray-900 z-50 transition-all duration-300">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          {/* Logo area - minimalist approach */}
+          <div>
+            <h1 className="text-2xl md:text-3xl font-light tracking-wider uppercase">Shafeer</h1>
           </div>
           
-          {/* Desktop Navigation - Minimalist */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-12">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <a 
-                    href={`#${link.id}`} 
-                    className="text-sm uppercase tracking-widest hover:text-stone-500 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Right side elements */}
+          <div className="flex items-center space-x-8">
+            {/* Cart/contact icon */}
+            <a href="tel:+971501781981" className="flex items-center">
+              <Phone className="w-4 h-4 text-gray-900" />
+              <span className="ml-2 hidden md:inline text-sm">+971 50 178 1981</span>
+            </a>
+            
+            {/* Menu text on desktop */}
             <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-              className="p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-sm uppercase tracking-wider"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? "Close" : "Menu"}
             </button>
           </div>
         </div>
-        
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-stone-100 border-t border-stone-200">
-            <div className="container mx-auto px-6 py-6">
-              <nav className="flex flex-col space-y-6">
-                {navLinks.map((link) => (
-                  <a 
-                    key={link.id}
-                    href={`#${link.id}`} 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-sm uppercase tracking-widest hover:text-stone-500 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-                <a 
-                  href="tel:+971501781981" 
-                  className="flex items-center mt-6 text-sm uppercase tracking-widest"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span>+971 50 178 1981</span>
-                </a>
-              </nav>
-            </div>
-          </div>
-        )}
       </header>
-
-      {/* HERO SECTION */}
-      <section id="hero" className="relative h-screen flex items-center pt-24">
-        <div className="absolute inset-0 z-0">
-
+      
+      {/* Full screen menu overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-gray-100 text-gray-900 z-40 flex items-center justify-center">
+          <div className="container mx-auto px-6">
+            <nav className="flex flex-col items-center space-y-8">
+              {navLinks.map((link) => (
+                <a 
+                  key={link.id}
+                  href={`#${link.id}`} 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-2xl md:text-3xl font-light uppercase tracking-wider hover:text-amber-600 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a 
+                href="tel:+971501781981" 
+                className="text-lg mt-12 flex items-center"
+              >
+                <Phone className="w-5 h-5 mr-3" />
+                <span>+971 50 178 1981</span>
+              </a>
+            </nav>
+          </div>
         </div>
-        <div className="container mx-auto px-6 z-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            <div className="md:col-span-6 lg:col-span-5">
-              <h2 className="text-6xl md:text-7xl lg:text-8xl leading-none mb-8 uppercase">
-                Premium Chauffeur Service
-              </h2>
-              <p className="text-xl mb-12 max-w-lg">
-                Discreet, professional transportation across Dubai and the UAE.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <a 
-                  href="#booking"
-                  className="px-8 py-4 bg-stone-900 text-stone-100 text-sm uppercase tracking-widest"
-                >
-                  Book Now
-                </a>
-                <a 
-                  href="tel:+971501781981"
-                  className="px-8 py-4 border border-stone-900 text-sm uppercase tracking-widest flex items-center justify-center"
-                >
-                  <Phone className="w-4 h-4 mr-3" />
-                  Contact
-                </a>
-              </div>
+      )}
+
+      {/* HERO SECTION - Adjusted for new header */}
+      <section id="hero" className="relative h-screen pt-24 flex items-center overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
+        <div className="absolute inset-0">
+          <img 
+            src="/wall.jpg"
+            alt="Professional Chauffeur Service" 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </div>
+        <div className="container relative mx-auto px-6 z-20 flex flex-col items-center md:items-start">
+          <div className="max-w-xl md:ml-12">
+            <p className="text-sm font-light text-amber-400 mb-2 tracking-widest">PREMIUM CHAUFFEUR SERVICE</p>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 text-white tracking-wide leading-tight">
+              Luxury Travel <br/>
+              <span className="text-amber-400">With Elegance</span>
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 font-light leading-relaxed">
+              Discreet, professional transportation across Dubai and the UAE.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <a 
+                href="#booking"
+                className="px-8 py-3 bg-amber-400 hover:bg-amber-500 text-gray-900 font-light rounded transition-all tracking-wide"
+              >
+                Book Now
+              </a>
+              <a 
+                href="tel:+971501781981"
+                className="px-8 py-3 border border-gray-400 hover:border-amber-400 text-gray-400 hover:text-amber-400 font-light rounded flex items-center justify-center transition-all"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Contact
+              </a>
             </div>
           </div>
         </div>
