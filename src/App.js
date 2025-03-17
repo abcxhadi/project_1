@@ -192,13 +192,7 @@ const ShafeerPortfolioRedesign = () => {
       {/* HERO SECTION */}
       <section id="hero" className="relative h-screen flex items-center pt-24">
         <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-stone-200">
-            <img 
-              src="/api/placeholder/1200/800" 
-              alt="Professional Chauffeur Service" 
-              className="w-full h-full object-cover opacity-80"
-            />
-          </div>
+
         </div>
         <div className="container mx-auto px-6 z-20">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
