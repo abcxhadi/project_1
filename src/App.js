@@ -327,6 +327,7 @@ const ShafeerPortfolio = () => {
       {/* About Me Section */}
       <section id="about" className="py-16 px-8">
         <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">About Me</h2>
           <div className="w-20 h-1 bg-yellow-500 mx-auto mb-12"></div>
           
           <div className="flex flex-col items-center">
