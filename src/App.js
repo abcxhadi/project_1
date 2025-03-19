@@ -25,7 +25,7 @@ const ShafeerPortfolio = () => {
     <div className="min-h-screen bg-white flex flex-col relative">
       
       {/* HEADER */}
-      <header className="bg-black text-white shadow-lg">
+      <header className="bg-gradient-to-b from-black to-gray-900 text-white shadow-lg">
         <div className="py-6 px-8 flex justify-center items-center">
           <div className="flex flex-col items-center space-y-2">
             <div className="flex items-center space-x-3">
@@ -69,12 +69,12 @@ const ShafeerPortfolio = () => {
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-        <div className="absolute inset-0 bg-black/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/30 z-10"></div>
         <div className="absolute inset-0 bg-gray-900">
           <img
             src="/wall.jpg"
             alt="Professional Chauffeur Service"
-            className="absolute inset-0 w-full h-full object-cover object-center filter grayscale"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
         </div>
         <div className="relative h-full flex items-center justify-center z-20 px-6">
@@ -282,7 +282,7 @@ const ShafeerPortfolio = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#fafafa] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 overflow-hidden border border-gray-100">
               <div className="grid md:grid-cols-2">
-                <img src="/previa.jpg" alt="Toyota Previa" className="w-full h-full object-cover filter grayscale" />
+                <img src="/previa.jpg" alt="Toyota Previa" className="w-full h-full object-cover" />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold mb-3 text-gray-900">Toyota Previa</h3>
                   <div className="text-gray-600 font-medium mb-4">9 Passengers</div>
@@ -305,7 +305,7 @@ const ShafeerPortfolio = () => {
             </div>
             <div className="bg-[#fafafa] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 overflow-hidden border border-gray-100">
               <div className="grid md:grid-cols-2">
-                <img src="/carnival.jpg" alt="Kia Carnival" className="w-full h-full object-cover filter grayscale" />
+                <img src="/carnival.jpg" alt="Kia Carnival" className="w-full h-full object-cover" />
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold mb-3 text-gray-900">Kia Carnival</h3>
                   <div className="text-gray-600 font-medium mb-4">8 Passengers</div>
@@ -479,7 +479,7 @@ const ShafeerPortfolio = () => {
                     Your booking request status will appear here.
                   </div>
                   {/* Buttons */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4  pt-4">
                     <a
                       href="https://wa.me/+971501781981"
                       target="_blank"
