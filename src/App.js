@@ -35,7 +35,7 @@ const ShafeerPortfolio = () => {
             <p className="text-gray-300 font-medium">Professional Chauffeur Service</p>
           </div>
         </div>
-        <nav className="py-3 border-t border-gray-800 bg-opacity-80">
+        <nav className="py-3 border-t border-gray-800 bg-black">
           <div className="container mx-auto flex justify-center">
             <ul className="flex flex-wrap justify-center space-x-2 md:space-x-6 px-4">
               <li className="my-1">
