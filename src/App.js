@@ -25,7 +25,7 @@ const ShafeerPortfolio = () => {
     <div className="min-h-screen bg-white flex flex-col relative">
       
       {/* HEADER */}
-      <header className="bg-gradient-to-b from-black to-gray-900 text-white shadow-lg">
+      <header className="bg-black text-white shadow-lg">
         <div className="py-6 px-8 flex justify-center items-center">
           <div className="flex flex-col items-center space-y-2">
             <div className="flex items-center space-x-3">
