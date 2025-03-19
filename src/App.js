@@ -249,7 +249,7 @@ const ShafeerPortfolio = () => {
           </div>
         </div>
         
-        <nav className="py-3 border-t border-green-700 bg-opacity-80">
+        <nav className="py-3 border-t border-green-700">
           <div className="container mx-auto flex justify-center">
             <ul className="flex flex-wrap justify-center space-x-2 md:space-x-6 px-4">
               <li className="my-1">
