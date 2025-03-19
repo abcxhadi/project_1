@@ -296,37 +296,33 @@ const ShafeerPortfolio = () => {
 
       {/* HERO SECTION */}
       <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-  {/* Gradient overlay matching the navbar color */}
-  <div className="absolute inset-0 bg-gradient-to-b from-green-900/80 to-transparent z-20"></div>
-  
-  {/* Background image */}
-  <img 
-    src="/wall.jpg"
-    alt="Professional Chauffeur Service" 
-    className="absolute inset-0 w-full h-full object-cover filter blur-[2px] scale-105"
-  />
-  
-  {/* Content */}
-  <div className="relative h-full flex items-center justify-center z-30 px-6">
-    <div className="text-center text-white max-w-3xl mx-auto">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">
-        Professional Chauffeur Service
-      </h2>
-      <p className="text-xl mb-8 text-shadow">
-        Luxury transportation with safety, punctuality, and comfort
-      </p>
-      <a 
-        href="#booking" 
-        className="inline-block bg-yellow-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300 shadow-xl"
-      >
-        Book Your Ride
-      </a>
-    </div>
-  </div>
-  
-  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent z-20"></div>
-</section>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/90 via-black/60 to-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-gray-900">
+          <img 
+            src="/wall.jpg"
+            alt="Professional Chauffeur Service" 
+            className="absolute inset-0 w-full h-full object-cover object-center filter blur-[2px] scale-105"
+          />
+          <div 
+            className="absolute inset-0 bg-black opacity-30 mix-blend-overlay" 
+            style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'1\'/%3E%3C/g%3E%3C/svg%3E")'}}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-green-900/40 to-transparent"></div>
+        </div>
+        <div className="relative h-full flex items-center justify-center z-20 px-6">
+          <div className="text-center text-white max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg">Professional Chauffeur Service</h2>
+            <p className="text-xl mb-8 text-shadow">Luxury transportation with safety, punctuality, and comfort</p>
+            <a 
+              href="#booking" 
+              className="inline-block bg-yellow-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300 shadow-xl"
+            >
+              Book Your Ride
+            </a>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent z-20"></div>
+      </section>
 
       {/* About Me Section */}
       <section id="about" className="py-16 px-8">
